@@ -1,0 +1,24 @@
+{
+    "motherboard": [
+        {"brand": "Huananzhi", "model": "X99-T8", "socket": "LGA 2011-3", "chipset": "X99"},
+        {"brand": "Jingsha", "model": "X79-D4", "socket": "LGA 2011", "chipset": "X79"},
+        {"brand": "Machinist", "model": "X99-ZD3", "socket": "LGA 2011-3", "chipset": "X99"},
+        {"brand": "Kllisre", "model": "B75M", "socket": "LGA 1155", "chipset": "B75"},
+        {"brand": "Onda", "model": "B365SD3", "socket": "LGA 1151", "chipset": "B365"},
+        {"brand": "Colorful", "model": "C.H81A-BTC V20", "socket": "LGA 1150", "chipset": "H81"},
+        {"brand": "Maxsun", "model": "H610M-D", "socket": "LGA 1700", "chipset": "H610"},
+        {"brand": "Huananzhi", "model": "B85M-K", "socket": "LGA 1150", "chipset": "B85"},
+        {"brand": "Jingsha", "model": "X99-D8", "socket": "LGA 2011-3", "chipset": "X99"},
+        {"brand": "Onda", "model": "H310C-D3", "socket": "LGA 1151", "chipset": "H310"},
+        {"brand": "Huananzhi", "model": "X79-8D", "socket": "LGA 2011", "chipset": "X79"},
+        {"brand": "Kllisre", "model": "H61M-V", "socket": "LGA 1155", "chipset": "H61"},
+        {"brand": "Machinist", "model": "B450M", "socket": "AM4", "chipset": "B450"},
+        {"brand": "Colorful", "model": "H510M-K", "socket": "LGA 1200", "chipset": "H510"},
+        {"brand": "Jingsha", "model": "H110-D3", "socket": "LGA 1151", "chipset": "H110"},
+        {"brand": "Onda", "model": "X79S", "socket": "LGA 2011", "chipset": "X79"},
+        {"brand": "Huananzhi", "model": "X99-F8", "socket": "LGA 2011-3", "chipset": "X99"},
+        {"brand": "Kllisre", "model": "H510M", "socket": "LGA 1200", "chipset": "H510"},
+        {"brand": "Machinist", "model": "A320M", "socket": "AM4", "chipset": "A320"},
+        {"brand": "Maxsun", "model": "B550M", "socket": "AM4", "chipset": "B550"}
+    ]
+}
