@@ -1,0 +1,19 @@
+footer{
+    height: 50vh;
+    padding: 3.5%;
+    background-color: gray;
+}
+.footer-info{
+    &__title{
+        font-size: 2.5rem;
+    }
+    &-text{
+        list-style: none;
+        &__title{
+            font-size: 1.6rem;
+        }
+        &__item{
+            font-size: 1rem;
+        }
+    }
+}
