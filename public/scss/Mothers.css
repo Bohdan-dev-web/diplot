@@ -1,1 +1,25 @@
-/*# sourceMappingURL=Mothers.css.map */
+.Mothers {
+  padding: 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Mothers-card {
+  margin: 2.2%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.Mothers-card__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 500px;
+  width: 500px;
+}
+.Mothers-card__title {
+  font-size: 2rem;
+  padding: 1.3%;
+  text-align: center;
+}/*# sourceMappingURL=Mothers.css.map */
