@@ -5,7 +5,9 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-
+app.get('/CPU', (req, res) => {
+    res.sendFile(__dirname + '/public/CPU.html');
+});
 app.get('/home', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });

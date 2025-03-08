@@ -1,7 +1,7 @@
 const Mothers = document.querySelector('.Mothers')
-async function getData() {
+async function getData(url) {
     try {
-        const response = await fetch('http://192.168.0.103:3000/Mothers');
+        const response = await fetch(url);
         const data = await response.json();
         data.forEach(el => {
             Mothers.innerHTML += 
@@ -17,4 +17,5 @@ async function getData() {
     }
 }
 
-getData()
+getData('http://192.168.0.103:3000/Mothers')
+module.exports = { getData }
