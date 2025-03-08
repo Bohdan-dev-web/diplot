@@ -1,10 +1,14 @@
 const Mothers = document.querySelector('.Mothers')
-async function getData(url) {
+async function getData(url,Section) {
+    console.log("Heloo");
+    
     try {
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
+        
         data.forEach(el => {
-            Mothers.innerHTML += 
+            Section.innerHTML += 
             `
             <div class="Mothers-card">
                 <img class="Mothers-card__img" src="${el.img}" alt="">
@@ -17,5 +21,4 @@ async function getData(url) {
     }
 }
 
-getData('http://192.168.0.103:3000/Mothers')
-module.exports = { getData }
+getData('http://192.168.0.103:3000/Mothers',Mothers)
