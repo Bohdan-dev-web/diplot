@@ -22,17 +22,25 @@ async function GetALLData() {
         console.error("Помилка отримання товарів:", error);
     }
 }
+app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.get('/productMothers/:name', (req,res) =>{
-    const name =  req.params.name;
-    const all = GetALLData();
-    console.log(all);
-    
+app.get('/productCPU/:name', async (req,res) =>{
+    try {
+        const all = await GetALLData(); 
+        const filtered = all.filter(cpu => cpu.model === req.params.name); 
+
+        console.log("Відфільтровані товари:", filtered);
+        
+        res.render("product", { allp: filtered });
+    } catch (error) {
+        console.error("Помилка у маршруті /product/:name:", error);
+        res.status(500).send("Внутрішня помилка сервера");
+    }
 })
 app.get('/CPU', (req, res) => {
     res.sendFile(__dirname + '/public/CPU.html');
 });
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 app.get('/productMothers', (req,res) => {

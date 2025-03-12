@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% allp.forEach(item => { %>
+        <img src="<%= item.img %>" alt="">
+        <ul>
+            <li>
+                <p><%= item.brand %></p>
+            </li>
+            <li>
+                <p><%= item.model %></p>
+            </li>
+            <li>
+                <p>Ядер: <%= item.cores %></p>
+            </li>
+            <li>
+                <p>Потоків: <%= item.threads %></p>
+            </li>
+            <li>
+                <p>Частота: <%= item.base_clock %></p>
+                <p>Турбо: <%= item.turbo_clock %></p>
+            </li>
+            <li>
+                <p>Сокет: <%= item.socket %></p>
+            </li>
+        </ul>
+
+
+    <% }) %>
+    <img src="<%= allp.img %>" alt="">
+</body>
+
+<script>
+    console.log(<%- JSON.stringify(allp, null, 2) %>);
+</script>
+</html>
