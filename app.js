@@ -13,9 +13,9 @@ async function GetALLCPU() {
     }
     
 }
-async function GetALLCPU() {
+async function GetALLMother() {
     try {
-        const cpuResponse = await fetch('http://192.168.0.107:3000/CPU');
+        const cpuResponse = await fetch('http://192.168.0.107:3000/Mothers');
         const cpus = await cpuResponse.json();
         
 
@@ -53,6 +53,9 @@ app.get('/productCPU/:name', async (req,res) =>{
     const id = req.params.name
     if(id.includes('p')){
         await RenredTovar('product',GetALLCPU,id,res)
+    }
+    else if (id.includes('m')) {
+        await RenredTovar('mother',GetALLMother,id,res)
     }
 })
 app.get('/CPU', (req, res) => {
