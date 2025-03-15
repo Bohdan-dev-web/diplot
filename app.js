@@ -1,40 +1,58 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-async function GetALLData() {
+async function GetALLCPU() {
     try {
-        const [mothersResponse, cpuResponse] = await Promise.all([
-            fetch('http://192.168.0.103:3000/Mothers'),
-            fetch('http://192.168.0.103:3000/CPU')
-        ]);
+        const cpuResponse = await fetch('http://192.168.0.107:3000/CPU');
+        const cpus = await cpuResponse.json();
+        
 
-        const [mothers, cpus] = await Promise.all([
-            mothersResponse.json(),
-            cpuResponse.json()
-        ]);
-
-        const allProducts = [...mothers, ...cpus]; 
-        console.log("Усі товари:", allProducts);
-
-        return allProducts;
-
+        return cpus;
     } catch (error) {
-        console.error("Помилка отримання товарів:", error);
+        console.error("Помилка отримання CPU:", error);
     }
+    
 }
+async function GetALLCPU() {
+    try {
+        const cpuResponse = await fetch('http://192.168.0.107:3000/CPU');
+        const cpus = await cpuResponse.json();
+        
+
+        return cpus;
+    } catch (error) {
+        console.error("Помилка отримання CPU:", error);
+    }
+    
+}
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.get('/productCPU/:name', async (req,res) =>{
+/**
+ * 
+ * @param {Параметр сторінки в яку передаєтся дані для процесора і для плат і відеокерт вони окремі} page 
+ * @param { функція отриманя плат або проц або відео Callback } fun 
+ * @param { ід отрумуєтся в запиту до продукту  } id 
+ */
+async function RenredTovar(page,fun,id,res) {
     try {
-        const all = await GetALLData(); 
-        const filtered = all.filter(cpu => cpu.model === req.params.name); 
+        const all = await fun(); 
+        console.log(all);
+        
+        const filtered = all.filter(cpu => cpu.id === id); 
 
         console.log("Відфільтровані товари:", filtered);
         
-        res.render("product", { allp: filtered });
+        res.render(page, { allp: filtered });
     } catch (error) {
-        console.error("Помилка у маршруті /product/:name:", error);
+        console.error("Помилка у маршруті /product/:name", error);
         res.status(500).send("Внутрішня помилка сервера");
+    }
+}
+app.get('/productCPU/:name', async (req,res) =>{
+    const id = req.params.name
+    if(id.includes('p')){
+        await RenredTovar('product',GetALLCPU,id,res)
     }
 })
 app.get('/CPU', (req, res) => {
