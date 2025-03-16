@@ -10,7 +10,7 @@ export async function getData(url, Section) {
             Section.innerHTML += `
             <div class="Mothers-card">
                 <img class="Mothers-card__img" src="${el.img}" alt="">
-                <p class="Mothers-card__title">${el.brand} ${el.model}</p>
+                <a href="/product/${el.id}" class="Mothers-card__title">${el.brand} ${el.model}</a>
             </div>
             ` 
         });

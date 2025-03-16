@@ -13,6 +13,18 @@ async function GetALLCPU() {
     }
     
 }
+async function GetALLGPU() {
+    try {
+        const cpuResponse = await fetch('http://192.168.0.107:3000/GPU');
+        const cpus = await cpuResponse.json();
+        
+
+        return cpus;
+    } catch (error) {
+        console.error("Помилка отримання CPU:", error);
+    }
+    
+}
 async function GetALLMother() {
     try {
         const cpuResponse = await fetch('http://192.168.0.107:3000/Mothers');
@@ -49,7 +61,7 @@ async function RenredTovar(page,fun,id,res) {
         res.status(500).send("Внутрішня помилка сервера");
     }
 }
-app.get('/productCPU/:name', async (req,res) =>{
+app.get('/product/:name', async (req,res) =>{
     const id = req.params.name
     if(id.includes('p')){
         await RenredTovar('product',GetALLCPU,id,res)
@@ -57,10 +69,17 @@ app.get('/productCPU/:name', async (req,res) =>{
     else if (id.includes('m')) {
         await RenredTovar('mother',GetALLMother,id,res)
     }
+    else if (id.includes('v')) {
+        await RenredTovar('cards',GetALLGPU,id,res)
+    }
 })
 app.get('/CPU', (req, res) => {
     res.sendFile(__dirname + '/public/CPU.html');
 });
+app.get('/GPU', (req, res) => {
+    res.sendFile(__dirname + '/public/GPU.html');
+});
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });

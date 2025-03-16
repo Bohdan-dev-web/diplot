@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/scss/card.css">
 </head>
 <body>
     <% allp.forEach(item => { %>
-        <img src="<%= item.img %>" alt="">
-        <ul>
-            <li>Виробник: <p><%= item.brand %></p></li>
-            <li>Модель: <p><%= item.model %></p></li>
-            <li>Сокет: <p><%= item.cpu_socket %></p></li>
-            <li>Чіпсет: <p><%= item.chipset %></p></li>
+        <img class="img" src="<%= item.img %>" alt="">
+        <ul class="list">
+            <li><p class="list__item">Виробник: <%= item.brand %></p></li>
+            <li><p class="list__item">Модель: <%= item.model %></p></li>
+            <li><p class="list__item">Сокет: <%= item.cpu_socket %></p></li>
+            <li><p class="list__item">Чіпсет: <%= item.chipset %></p></li>
+            <li><p class="list__item">Тип памяті <%= item.memory_type %></p></li>
+            <li>
+                <p class="list__item"><%= item.features %></p>
+            </li>
+            <li>
+                <p class="list__item">Сховища сата: <%= item.storage.SATA3 %> </p>
+                <p class="list__item">Сховища m2: <%= item.storage.M2 %></p>
+            </li>
         </ul>
-
 
     <% }) %>
 </body>

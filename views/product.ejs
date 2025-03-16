@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/scss/card.css">
 </head>
 <body>
     <% allp.forEach(item => { %>
-        <img src="<%= item.img %>" alt="">
-        <ul>
+        <img class="img" src="<%= item.img %>" alt="">
+        <ul class="list">
             <li>
-                <p><%= item.brand %></p>
+                <p class="list__item"><%= item.brand %></p>
             </li>
             <li>
-                <p><%= item.model %></p>
+                <p class="list__item"><%= item.model %></p>
             </li>
             <li>
-                <p>Ядер: <%= item.cores %></p>
+                <p class="list__item">Ядер: <%= item.cores %></p>
             </li>
             <li>
-                <p>Потоків: <%= item.threads %></p>
+                <p class="list__item">Потоків: <%= item.threads %></p>
             </li>
             <li>
-                <p>Частота: <%= item.base_clock %></p>
-                <p>Турбо: <%= item.turbo_clock %></p>
+                <p class="list__item">Частота: <%= item.base_clock %></p>
+                <p class="list__item">Турбо: <%= item.turbo_clock %></p>
             </li>
             <li>
-                <p>Сокет: <%= item.socket %></p>
+                <p class="list__item">Сокет: <%= item.socket %></p>
+            </li>
+            <li>
+                <p class="list__item"><%= item.features %></p>
             </li>
         </ul>
 

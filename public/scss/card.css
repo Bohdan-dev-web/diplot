@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.img {
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.list {
+  list-style: none;
+}
+.list__item {
+  border-bottom: 1.5px solid gray;
+  font-size: 24px;
+  padding-bottom: 10px;
+}/*# sourceMappingURL=card.css.map */

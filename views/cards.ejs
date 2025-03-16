@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scss/card.css">
+</head>
+<body>
+    <% allp.forEach(item => { %>
+        <img class="img" src="<%= item.img %>" alt="">
+        <ul class="list">
+            <li><p class="list__item">Чіп <%= item.chipset %></p></li>
+            <li><p class="list__item">Память <%= item.memory %></p></li>
+            <li><p class="list__item">Виробник <%= item.brand %></p></li>
+            <li><p class="list__item">Модель <%= item.model %></p></li>
+            <li><p class="list__item">Підтримка <%= item.features %> </p></li>
+        </ul>
+
+    <% }) %>
+</body>
+
+<script>
+    console.log(<%- JSON.stringify(allp, null, 2) %>);
+</script>
+</html>
